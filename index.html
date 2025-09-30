@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civitas - Listagem de Usuários</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Menu lateral -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1>Civitas</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-users"></i> Usuários</a></li>
+                    <li><a href="#"><i class="fas fa-building"></i> Departamentos</a></li>
+                    <li><a href="#"><i class="fas fa-file-alt"></i> Documentos</a></li>
+                    <li><a href="#"><i class="fas fa-chart-bar"></i> Relatórios</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Configurações</a></li>
+                </ul>
+            </nav>
+            <div class="user-info">
+                <div class="avatar">SA</div>
+                <div class="user-details">
+                    <p class="name">Samuel</p>
+                    <p class="role">Administrador</p>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Conteúdo principal -->
+        <main class="content">
+            <header>
+                <div class="page-title">
+                    <h2>Usuários</h2>
+                    <p>Gerenciamento de cadastro de usuários</p>
+                </div>
+                <div class="actions">
+                    <button class="btn btn-primary"><i class="fas fa-plus"></i> Novo Usuário</button>
+                </div>
+            </header>
+
+            <!-- Barra de filtros e pesquisa -->
+            <div class="filters">
+                <div class="search-container">
+                    <input type="text" placeholder="Buscar usuários..." class="search-input">
+                    <button class="search-btn"><i class="fas fa-search"></i></button>
+                </div>
+                <div class="filter-actions">
+                    <select class="filter-select">
+                        <option>Todos os tipos</option>
+                        <option>Administrador</option>
+                        <option>Cidadão</option>
+                        <option>Funcionário</option>
+                    </select>
+                    <button class="btn btn-secondary"><i class="fas fa-filter"></i> Filtros</button>
+                </div>
+            </div>
+
+            <!-- Tabela de listagem -->
+            <div class="table-container">
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>CPF</th>
+                            <th>Matrícula</th>
+                            <th>Cidade</th>
+                            <th>Estado</th>
+                            <th>Tipo</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Ana Silva</td>
+                            <td>123.456.789-00</td>
+                            <td>ADM001</td>
+                            <td>São Paulo</td>
+                            <td>SP</td>
+                            <td><span class="tag admin">Administrador</span></td>
+                            <td class="actions-cell">
+                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>João Santos</td>
+                            <td>987.654.321-00</td>
+                            <td>CID124</td>
+                            <td>Rio de Janeiro</td>
+                            <td>RJ</td>
+                            <td><span class="tag citizen">Cidadão</span></td>
+                            <td class="actions-cell">
+                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Maria Oliveira</td>
+                            <td>456.789.123-00</td>
+                            <td>FUN089</td>
+                            <td>Belo Horizonte</td>
+                            <td>MG</td>
+                            <td><span class="tag employee">Funcionário</span></td>
+                            <td class="actions-cell">
+                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Carlos Mendes</td>
+                            <td>111.222.333-44</td>
+                            <td>CID567</td>
+                            <td>Curitiba</td>
+                            <td>PR</td>
+                            <td><span class="tag citizen">Cidadão</span></td>
+                            <td class="actions-cell">
+                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>Patrícia Lima</td>
+                            <td>555.666.777-88</td>
+                            <td>FUN256</td>
+                            <td>Salvador</td>
+                            <td>BA</td>
+                            <td><span class="tag employee">Funcionário</span></td>
+                            <td class="actions-cell">
+                                <button class="action-btn edit"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn view"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginação -->
+            <div class="pagination">
+                <button class="page-btn"><i class="fas fa-angle-left"></i></button>
+                <button class="page-btn active">1</button>
+                <button class="page-btn">2</button>
+                <button class="page-btn">3</button>
+                <span class="page-ellipsis">...</span>
+                <button class="page-btn">10</button>
+                <button class="page-btn"><i class="fas fa-angle-right"></i></button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Versão mobile: botão de menu -->
+    <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <script>
+        // Toggle mobile menu
+        const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+        const sidebar = document.querySelector('.sidebar');
+        
+        mobileMenuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('show');
+        });
+    </script>
+</body>
+</html>

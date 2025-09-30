@@ -1,0 +1,467 @@
+/* Variáveis de cores baseadas na paleta fornecida */
+:root {
+    --primary: #1E40AF; /* azul 800 */
+    --secondary: #0E7490; /* teal 700 */
+    --accent: #F59E0B; /* âmbar 500 */
+    
+    /* Neutros */
+    --neutral-900: #0F172A;
+    --neutral-700: #334155;
+    --neutral-600: #475569;
+    --neutral-400: #94A3B8;
+    --neutral-300: #CBD5E1;
+    --neutral-200: #E2E8F0;
+    --neutral-100: #F1F5F9;
+    
+    /* Fundos */
+    --bg-light: #F7FAFC;
+    --bg-dark: #0B1220;
+    
+    /* Status */
+    --success: #16A34A;
+    --warning: #D97706;
+    --error: #B91C1C;
+    --info: #0284C7;
+    
+    /* Sombras */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    
+    /* Tamanhos */
+    --sidebar-width: 250px;
+    --header-height: 64px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: var(--bg-light);
+    color: var(--neutral-700);
+}
+
+/* Layout principal */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Barra lateral */
+.sidebar {
+    width: var(--sidebar-width);
+    background-color: var(--primary);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+.logo {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 20px 0;
+}
+
+nav ul li {
+    padding: 0 15px;
+}
+
+nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+nav ul li a i {
+    margin-right: 12px;
+    font-size: 18px;
+    width: 24px;
+    text-align: center;
+}
+
+nav ul li.active a, nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.user-info {
+    margin-top: auto;
+    padding: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+}
+
+.avatar {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+.user-details .name {
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.user-details .role {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+/* Conteúdo principal */
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-x: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.page-title h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--neutral-900);
+    margin-bottom: 5px;
+}
+
+.page-title p {
+    color: var(--neutral-600);
+    font-size: 14px;
+}
+
+/* Botões */
+.btn {
+    padding: 10px 16px;
+    border-radius: 6px;
+    font-weight: 500;
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.btn i {
+    font-size: 16px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1e3a8a;
+}
+
+.btn-secondary {
+    background-color: var(--secondary);
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #0c637a;
+}
+
+/* Filtros e busca */
+.filters {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 8px;
+    border: 1px solid var(--neutral-200);
+    overflow: hidden;
+    width: 300px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 16px;
+    border: none;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-btn {
+    background-color: transparent;
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    color: var(--neutral-600);
+}
+
+.filter-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.filter-select {
+    padding: 10px;
+    border: 1px solid var(--neutral-200);
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Tabela de dados */
+.table-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th, .data-table td {
+    padding: 16px 20px;
+    text-align: left;
+}
+
+.data-table th {
+    background-color: var(--neutral-100);
+    color: var(--neutral-700);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.data-table tr {
+    border-bottom: 1px solid var(--neutral-200);
+}
+
+.data-table tr:last-child {
+    border-bottom: none;
+}
+
+.data-table tbody tr:hover {
+    background-color: var(--neutral-100);
+}
+
+/* Tags de status */
+.tag {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.tag.admin {
+    background-color: rgba(2, 132, 199, 0.1);
+    color: var(--info);
+}
+
+.tag.citizen {
+    background-color: rgba(245, 158, 11, 0.1);
+    color: var(--accent);
+}
+
+.tag.employee {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+}
+
+/* Botões de ação na tabela */
+.actions-cell {
+    white-space: nowrap;
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.action-btn.edit:hover {
+    background-color: rgba(2, 132, 199, 0.1);
+    color: var(--info);
+}
+
+.action-btn.view:hover {
+    background-color: rgba(16, 185, 129, 0.1);
+    color: var(--success);
+}
+
+.action-btn.delete:hover {
+    background-color: rgba(220, 38, 38, 0.1);
+    color: var(--error);
+}
+
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-top: 30px;
+}
+
+.page-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid var(--neutral-200);
+    background-color: white;
+    color: var(--neutral-700);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-btn:hover {
+    background-color: var(--neutral-100);
+}
+
+.page-btn.active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.page-ellipsis {
+    color: var(--neutral-600);
+    padding: 0 5px;
+}
+
+/* Responsividade */
+.mobile-menu-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 101;
+    box-shadow: var(--shadow-lg);
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        position: fixed;
+        left: -250px;
+        height: 100%;
+    }
+
+    .sidebar.show {
+        left: 0;
+    }
+
+    .content {
+        width: 100%;
+    }
+
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-container {
+        width: 100%;
+    }
+
+    .filter-actions {
+        justify-content: space-between;
+    }
+
+    .actions {
+        margin-top: 10px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+    .table-container {
+        overflow-x: auto;
+    }
+
+    .data-table {
+        min-width: 800px;
+    }
+
+    .page-title h2 {
+        font-size: 20px;
+    }
+
+    .filter-actions {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .filter-select, .btn {
+        width: 100%;
+    }
+}
